@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Naipunya | Carpenter & Painter Platform</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #F5F1EC;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #8B5E3C;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #8B5E3C;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8B5E3C;
+        }
+
+        .language-select {
+            margin-left: 20px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 90px 8%;
+            background: linear-gradient(120deg, #F1E3D3, #ffffff);
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            max-width: 520px;
+        }
+
+        .hero-text h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+
+        .hero-text p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+
+        .hero-buttons button {
+            padding: 13px 28px;
+            border: none;
+            border-radius: 8px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #8B5E3C;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #6f472b;
+        }
+
+        .secondary {
+            background: white;
+            border: 2px solid #8B5E3C;
+            color: #8B5E3C;
+        }
+
+        .secondary:hover {
+            background: #8B5E3C;
+            color: white;
+        }
+
+        .hero img {
+            width: 420px;
+            border-radius: 14px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .hero-carousel {
+            position: relative;
+            width: 420px;
+            height: 420px;
+            overflow: hidden;
+        }
+
+        .hero-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .hero-slide.active {
+            display: block;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 34px;
+            margin-bottom: 45px;
+            color: #2C2C2C;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 270px;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #eee;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: 0.35s;
+            text-align: left;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card h4 {
+            color: #8B5E3C;
+            margin-bottom: 10px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* HOW IT WORKS */
+
+        .how {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            max-width: 260px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* PRICING */
+
+        .pricing {
+            background: #EFE6DC;
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .price-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: white;
+            padding: 40px;
+            width: 260px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .price-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 34px;
+            margin: 15px 0;
+            color: #8B5E3C;
+            font-weight: 600;
+        }
+
+        /* BOOKING */
+        #workerSection {
+            display: none;
+        }
+
+        .booking {
+            padding: 80px 20px;
+            text-align: center;
+            background: #f8f8f8;
+        }
+
+        .book-desc {
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .booking form {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .booking input,
+        .booking select,
+        .booking textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .booking textarea {
+            min-height: 120px;
+            margin-top: 10px;
+        }
+
+        .submit {
+            margin-top: 15px;
+            background: #8B5E3C;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit:hover {
+            background: #6e472d;
+        }
+
+        @media(max-width:700px) {
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        /* REVIEWS */
+        .review-marquee {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .review-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollReviews 35s linear infinite;
+        }
+
+        .review-card {
+            min-width: 260px;
+            max-width: 260px;
+            padding: 18px;
+        }
+
+        .review-track .card {
+            min-width: 380px;
+            flex-shrink: 0;
+        }
+
+        .review-stars {
+            color: #f5b301;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        @keyframes scrollReviews {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #2C2C2C;
+            color: white;
+            padding: 50px 8%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer h2 {
+            color: #F5CBA7;
+            margin-bottom: 10px;
+        }
+
+        .footer h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            display: block;
+            color: #ddd;
+            text-decoration: none;
+            margin-bottom: 6px;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 350px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .modal-box button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #8B5E3C;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width:900px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+                padding: 60px 5%;
+            }
+
+            .hero-carousel {
+                width: 100%;
+                max-width: 400px;
+                height: 300px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-buttons button {
+                padding: 12px 20px;
+                font-size: 14px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width:600px) {
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                gap: 10px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+            .language-select {
+                margin-top: 10px;
+            }
+
+
+            .review-marquee {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .review-track .review-card {
+                min-width: 220px;
+                max-width: 220px;
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            .review-track {
+                animation: none;
+                gap: 15px;
+            }
+
+            .review-track .card {
+                min-width: 240px;
+                padding: 20px;
+                font-size: 14px;
+            }
+
+            .review-marquee::-webkit-scrollbar {
+                display: none;
+            }
+
+        }
+
+        @media (max-width:480px) {
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .hero-text p {
+                font-size: 14px;
+            }
+
+        }
+
+        .marquee-container {
+            background: #8B5E3C;
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 40px;
+            width: max-content;
+            animation: marqueeScroll 18s linear infinite;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo" id="logo">Naipunya 🏠</div>
+
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#" id="navHome">Home</a>
+                <a href="#services" id="navServices">Services</a>
+                <a href="#how" id="navHow">How it Works</a>
+                <a href="#pricing" id="navPricing">Pricing</a>
+                <a href="#book" id="navBook">Book</a>
+
+                <select id="languageSwitcher" class="language-select">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </nav>
+
+    </header>
+    <marquee class="marquee-container">
+        <span id="update1">📍 Currently providing services in: Visakhapatnam • Vizianagaram • Bheemili • Vepagunta •
+            Pendurthi</span>
+        <span id="update2">📍 Currently providing services in: Visakhapatnam • Vizianagaram • Bheemili • Vepagunta •
+            Pendurthi</span>
+    </marquee>
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1 id="heroTitle">Find Trusted Carpenters & Painters Near You</h1>
+
+            <p id="heroDesc">
+                Naipunya connects homeowners with professional carpenters, painters and wood carving experts. Book
+                skilled workers instantly.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary" id="bookBtn" onclick="showBooking()">Book Service</button>
+                <button class="secondary" id="joinBtn" onclick="showWorker()">Join as Worker</button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-carousel">
+
+            <!-- <img class="hero-slide active" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
+
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828"> -->
+
+            <img class="hero-slide active" src="images/IMG-20260308-WA0002.jpg">
+
+            <img class="hero-slide" src="images/IMG-20260308-WA0005.jpg">
+
+            <img class="hero-slide" src="images/IMG-20260308-WA0013.jpg">
+
+            <img class="hero-slide" src="images/IMG-20260308-WA0014.jpg">
+
+
+        </div>
+
+    </section>
+
+    <section id="services" class="section">
+
+        <h2 id="servicesTitle">Our Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3 id="service1">Carpentry</h3>
+                <p id="service1desc">Furniture repair, cupboards, wardrobes and custom wood work.</p>
+            </div>
+
+            <div class="card">
+                <h3 id="service2">House Painting</h3>
+                <p id="service2desc">Interior painting, exterior painting and wall designs.</p>
+            </div>
+
+            <div class="card">
+                <h3 id="service3">Wood Carving</h3>
+                <p id="service3desc">Temple carving, decorative wooden designs and art work.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="how" class="section">
+
+        <h2 id="howTitle">How It Works</h2>
+
+        <div class="how">
+
+            <div class="step">
+                <h3 id="step1">1. Request Service</h3>
+                <p id="step1desc">Submit your carpentry or painting requirement.</p>
+            </div>
+
+            <div class="step">
+                <h3 id="step2">2. Get Matched</h3>
+                <p id="step2desc">We connect you with verified craftsmen.</p>
+            </div>
+
+            <div class="step">
+                <h3 id="step3">3. Work Completed</h3>
+                <p id="step3desc">Get the job done quickly by professionals.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="craftsmen" class="section">
+
+        <h2 id="craftTitle">Our Master Craftsmen</h2>
+
+        <p id="craftDesc" style="max-width:650px;margin:auto;color:#64748b;margin-bottom:50px;">
+            Meet our experienced professionals who lead skilled teams delivering high-quality carpentry, painting and
+            wood carving services.
+        </p>
+
+        <div class="cards">
+
+            <!-- Carpenter 1 -->
+
+            <div class="card">
+
+                <h3 id="carpenterShanmukaRao">Shanmukha Rao</h3>
+                <h4 id="carpenter1Title">Master Carpenter</h4>
+
+                <p id="carpenter1Desc1">
+                    19+ years of experience in complete apartment woodwork including cupboards,
+                    wardrobes, shelves, kitchen cabinets and custom furniture.
+                </p>
+
+                <p id="carpenter1Desc2" style="margin-top:10px;color:#64748b;">
+                    Leads a team of 3–4 skilled carpenters.
+                </p>
+
+                <p id="carpenter1Desc3" style="margin-top:10px;font-size:14px;color:#94a3b8;">
+                    Specializes in full flat carpentry work.
+                </p>
+
+            </div>
+
+
+            <!-- Carpenter 2 -->
+
+            <div class="card">
+
+                <h3 id="carpenterSrinivas">Srinivas</h3>
+                <h4 id="carpenter2Title">Senior Carpenter</h4>
+
+                <p id="carpenter2Desc1">
+                    19+ years of experience in apartment woodwork including cupboards,
+                    wardrobes, kitchen cabinets and custom furniture.
+                </p>
+
+                <p id="carpenter2Desc2" style="margin-top:10px;color:#64748b;">
+                    Leads a team of 3–4 skilled carpenters.
+                </p>
+
+                <p id="carpenter2Desc3" style="margin-top:10px;font-size:14px;color:#94a3b8;">
+                    Specializes in wardrobes, cupboards and kitchen woodwork.
+                </p>
+
+            </div>
+
+
+            <!-- Painter -->
+
+            <div class="card">
+
+                <h3 id="painterApparao">Apparao</h3>
+                <h4 id="painterTitle">Professional Painter</h4>
+
+                <p id="painterDesc1">
+                    15+ years of experience in interior and exterior house painting for apartments
+                    and independent houses.
+                </p>
+
+                <p id="painterDesc2" style="margin-top:10px;color:#64748b;">
+                    Leads a team of 3–4 professional painters.
+                </p>
+
+                <p id="painterDesc3" style="margin-top:10px;font-size:14px;color:#94a3b8;">
+                    Expert in smooth finishes and modern wall designs.
+                </p>
+
+            </div>
+
+
+            <!-- Wood Carver -->
+
+            <div class="card">
+
+                <h3 id="carverSantosh">Santhosh Kumar</h3>
+                <h4 id="carverTitle">Wood Carving Artist</h4>
+
+                <p id="carverDesc1">
+                    17+ years of experience in artistic wood carving including temple doors,
+                    pooja room doors and decorative wooden designs.
+                </p>
+
+                <p id="carverDesc2" style="margin-top:10px;color:#64748b;">
+                    Leads a team of 3 skilled carving artisans.
+                </p>
+
+                <p id="carverDesc3" style="margin-top:10px;font-size:14px;color:#94a3b8;">
+                    Special talent in carving gods on wooden doors and temple work.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 id="customerReviewsTitle">Customer Reviews</h2>
+
+        <div class="review-marquee">
+
+            <div class="review-track">
+
+                <div class="card review-card">
+                    <h3>Ramesh – MVP Colony</h3>
+                    <div class="review-stars">★★★★★</div>
+                    <p>
+                        మా ఇంట్లో అల్మారా పని చాలా బాగా చేశారు.
+                        చాలా శుభ్రంగా చేసి ఇచ్చారు. చెప్పిన రోజుకే పని పూర్తి చేశారు.
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Sravani – PM Palem</h3>
+                    <div class="review-stars">★★★★☆</div>
+                    <p>
+                        మా ఇంటికి రంగు వేయడం చాలా బాగా చేశారు.
+                        ఇంట్లో ఉన్న వస్తువులు కప్పి చేసి వెళ్లారు, ఎక్కడా మురికి కాలేదు.
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Kiran – Gopalapatnam</h3>
+                    <div class="review-stars">★★★★☆</div>
+                    <p>
+                        అల్మారా తలుపు సరిగా మూయడం లేదు.
+                        వాళ్లు వచ్చి త్వరగా సరిచేశారు. పని బాగా చేశారు.
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Anitha – Anandapuram </h3>
+                    <div class="review-stars">★★★★★</div>
+                    <p>
+                        వంటగది అల్మారా అమరిక చాలా బాగా చేశారు.
+                        పని చేసిన వాళ్లు కూడా చాలా మంచిగా మాట్లాడారు.
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Rohit – Siripuram </h3>
+                    <div class="review-stars">★★★☆☆</div>
+                    <p>
+                        काम बहुत अच्छा किया। दीवारों पर रंग साफ़ और
+                        सुंदर लगाया गया। काम समय पर पूरा हुआ।
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Prasad – Vizianagaram</h3>
+                    <div class="review-stars">★★★☆☆</div>
+                    <p>
+                        సంతోష్ కుమార్ గారు పూజా గది తలుపు చెక్క పని చాలా బాగా చేశారు.
+                        చూడటానికి చాలా అందంగా ఉంది.
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Rajesh – Vepagunta</h3>
+                    <div class="review-stars">★★★★☆</div>
+                    <p>
+                        మా ఇంటి గోడలకు రంగు చాలా బాగా వేశారు.
+                        చాలా సాఫీగా కనిపిస్తోంది.
+                    </p>
+                </div>
+
+                <div class="card review-card">
+                    <h3>Lavanya – Madhurawada</h3>
+                    <div class="review-stars">★★★☆☆</div>
+                    <p>
+                        అల్మారా కబ్జాలు సరిగా లేవు.
+                        వచ్చి త్వరగా సరిచేసి వెళ్లారు.
+                    </p>
+                </div>
+
+
+
+                <div class="card review-card">
+                    <h3>Neha – Dwarakanagar</h3>
+                    <div class="review-stars">★★★★☆</div>
+                    <p>
+                        सेवा बहुत अच्छी थी। बढ़ई समय पर आए और
+                        अलमारी ठीक से ठीक करके गए।
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="pricing" class="pricing">
+
+        <h2 id="pricingTitle">For Professionals</h2>
+
+        <div class="price-cards">
+
+            <div class="price-card">
+                <h3 id="starterPlan">Starter</h3>
+                <div class="price">Free</div>
+                <p id="starterDesc">5 job leads per month</p>
+            </div>
+
+            <div class="price-card">
+                <h3 id="proPlan">Pro</h3>
+                <div class="price">₹199/mo</div>
+                <p id="proDesc">Unlimited leads</p>
+            </div>
+
+            <div class="price-card">
+                <h3 id="businessPlan">Business</h3>
+                <div class="price">₹399/mo</div>
+                <p id="businessDesc">Priority job listing</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="book" class="booking">
+
+        <h2 id="requestServiceTitle">Request a Service</h2>
+
+        <p id="requestServiceDesc" class="book-desc">
+            Tell us what work you need and schedule a preferred date.
+            Our craftsmen will contact you shortly.
+        </p>
+
+        <form id="customerForm" action="https://formsubmit.co/YOURMAIL@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-grid">
+
+                <input type="text" name="name" placeholder="Your Name" id="customerName" required
+                    data-translate-placeholder="yourName">
+
+                <input type="tel" name="phone" placeholder="Phone Number" id="customerPhone" required
+                    data-translate-placeholder="phoneNumber">
+
+                <input type="text" name="city" placeholder="City / Area" id="customerCity"
+                    data-translate-placeholder="cityArea">
+
+                <select name="service" required>
+
+                    <option value="" id="selectService">Select Service</option>
+
+                    <option id="carpentry">Carpentry</option>
+
+                    <option id="painting">House Painting</option>
+
+                    <option id="woodCarving">Wood Carving</option>
+
+                </select>
+
+                <input type="date" name="schedule" id="customerSchedule" required>
+
+            </div>
+
+            <textarea name="work" id="customerDescription"
+                placeholder="Describe the work you need (Example: wardrobe repair, door carving, full house painting)"
+                data-translate-placeholder="workDescription"></textarea>
+
+            <button type="submit" class="submit" id="submitRequest">
+                Submit Request
+            </button>
+
+        </form>
+
+    </section>
+
+    <section id="workerSection" class="booking">
+
+        <h2 id="joinWorkerTitle">Join as Worker</h2>
+
+        <form id="workerForm" action="https://formsubmit.co/naipunyawork@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-grid">
+
+                <input type="text" name="name" placeholder="Worker Name" id="workerName" required
+                    data-translate-placeholder="workerName">
+
+                <input type="tel" name="phone" placeholder="Phone Number" id="workerPhone" required
+                    data-translate-placeholder="phoneNumber">
+
+                <input type="text" name="city" placeholder="City" id="workerCity" data-translate-placeholder="city">
+
+                <select name="skill">
+
+                    <option id="carpenter">Carpenter</option>
+
+                    <option id="painter">Painter</option>
+
+                    <option id="woodCarving">Wood Carving</option>
+
+                </select>
+
+                <input type="text" name="experience" placeholder="Years of Experience" id="workerExperience"
+                    data-translate-placeholder="experienceYears">
+
+            </div>
+
+            <textarea name="details" placeholder="Tell us about your work" id="workerDetails"
+                data-translate-placeholder="tellWork"></textarea>
+
+            <button type="submit" class="submit" id="applyNow">
+                Apply
+            </button>
+
+        </form>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2 id="footerTitle">Naipunya</h2>
+                <p id="footerDesc">Connecting skilled carpenters, painters and craftsmen with homes that need quality
+                    work.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3 id="quickLinks">Quick Links</h3>
+                <a href="#" id="navHome">Home</a>
+                <a href="#services" id="navServices">Services</a>
+                <a href="#how" id="navHow">How it Works</a>
+                <a href="#book" id="navBook">Book Service</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3 id="footerContact">Contact</h3>
+                <p>📍 Visakhapatnam, India</p>
+                <!-- <p>📞 +91 XXXXX XXXXX</p> -->
+                <p>✉ naipunyawork@gmail.com</p>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Naipunya. All rights reserved.
+        </p>
+
+    </footer>
+    <div id="successModal" class="modal">
+        <div class="modal-box">
+            <h2>✅ Request Sent</h2>
+            <p>Thank you! Our craftsmen will contact you soon.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+
+        const translations = {
+
+            en: {
+                navHome: "Home",
+                navServices: "Services",
+                navHow: "How it Works",
+                navPricing: "Pricing",
+                navBook: "Book",
+
+                update1: "📍 Currently providing services in: Visakhapatnam • Vizianagaram • Bheemili • Vepagunta • Pendurthi",
+                update2: "📍 Currently providing services in: Visakhapatnam • Vizianagaram • Bheemili • Vepagunta • Pendurthi",
+
+                logo: "Naipunya 🏠",
+                heroTitle: "Find Trusted Carpenters & Painters Near You",
+                heroDesc: "Naipunya connects homeowners with professional carpenters, painters and wood carving experts. Book skilled workers instantly.",
+
+                bookBtn: "Book Service",
+                joinBtn: "Join as Worker",
+
+                servicesTitle: "Our Services",
+                service1: "Carpentry",
+                service1desc: "Furniture repair, cupboards, wardrobes and custom wood work.",
+                service2: "House Painting",
+                service2desc: "Interior painting, exterior painting and wall designs.",
+                service3: "Wood Carving",
+                service3desc: "Temple carving, decorative wooden designs and art work.",
+
+                howTitle: "How It Works",
+                step1: "1. Request Service",
+                step1desc: "Submit your carpentry or painting requirement.",
+                step2: "2. Get Matched",
+                step2desc: "We connect you with verified craftsmen.",
+                step3: "3. Work Completed",
+                step3desc: "Get the job done quickly by professionals.",
+
+                craftTitle: "Our Master Craftsmen",
+                craftDesc: "Meet our experienced professionals who lead skilled teams delivering high-quality carpentry, painting and wood carving services.",
+
+                carpenterShanmukaRao: "Shanmukha Rao",
+                carpenter1Title: "Master Carpenter",
+                carpenter1Desc1: "19+ years of experience in complete apartment woodwork including cupboards, wardrobes, shelves, kitchen cabinets and custom furniture.",
+                carpenter1Desc2: "Leads a team of 3–4 skilled carpenters.",
+                carpenter1Desc3: "Specializes in full flat carpentry work.",
+
+                carpenterSrinivas: "Srinivas",
+                carpenter2Title: "Senior Carpenter",
+                carpenter2Desc1: "19+ years of experience in apartment woodwork including cupboards, wardrobes, kitchen cabinets and custom furniture.",
+                carpenter2Desc2: "Leads a team of 3–4 skilled carpenters.",
+                carpenter2Desc3: "Specializes in wardrobes, cupboards and kitchen woodwork.",
+
+                painterApparao: "Apparao",
+                painterTitle: "Professional Painter",
+                painterDesc1: "15+ years of experience in interior and exterior house painting for apartments and independent houses.",
+                painterDesc2: "Leads a team of 3–4 professional painters.",
+                painterDesc3: "Expert in smooth finishes and modern wall designs.",
+
+                carverSantosh: "Santhosh Kumar",
+                carverTitle: "Wood Carving Artist",
+                carverDesc1: "17+ years of experience in artistic wood carving including temple doors, pooja room doors and decorative wooden designs.",
+                carverDesc2: "Leads a team of 3 skilled carving artisans.",
+                carverDesc3: "Special talent in carving gods on wooden doors and temple work.",
+
+                customerReviewsTitle: "Customer Reviews",
+
+                requestServiceTitle: "Request a Service",
+                requestServiceDesc: "Tell us what work you need and schedule a preferred date. Our craftsmen will contact you shortly.",
+                yourName: "Your Name",
+                phoneNumber: "Phone Number",
+                cityArea: "City / Area",
+                selectService: "Select Service",
+                carpentry: "Carpentry",
+                painting: "House Painting",
+                woodCarving: "Wood Carving",
+                workDescription: "Describe the work you need (Example: wardrobe repair, door carving, full house painting)",
+                submitRequest: "Submit Request",
+
+                joinWorkerTitle: "Join as Worker",
+                workerName: "Worker Name",
+                city: "City",
+                carpenter: "Carpenter",
+                painter: "Painter",
+                experienceYears: "Years of Experience",
+                tellWork: "Tell us about your work",
+                applyNow: "Apply",
+
+                pricingTitle: "For Professionals",
+                starterPlan: "Starter",
+                starterDesc: "5 job leads per month",
+                proPlan: "Pro",
+                proDesc: "Unlimited leads",
+                businessPlan: "Business",
+                businessDesc: "Priority job listing",
+
+                bookTitle: "Request a Service",
+                submitBtn: "Submit Request",
+
+                footerTitle: "Naipunya",
+                footerDesc: "Connecting skilled carpenters, painters and craftsmen with homes that need quality work.",
+                quickLinks: "Quick Links",
+                footerContact: "Contact",
+
+                customerName: "Customer Name",
+                customerPhone: "Customer Phone",
+                customerCity: "Customer City",
+                customerService: "Customer Service",
+                customerDescription: "Describe the work (Example: wardrobe repair, door carving, full house painting)",
+                submitReview: "Submit Review",
+
+                workerName: "Worker Name",
+                workerCity: "Worker City",
+                workerService: "Worker Service",
+                workerExperience: "Years of Experience",
+                workerDescription: "Describe the work (Example: wardrobe repair, door carving, full house painting)",
+                submitReview: "Submit Review",
+            },
+
+            te: {
+                navHome: "హోమ్",
+                navServices: "సేవలు",
+                navHow: "ఎలా పని చేస్తుంది",
+                navPricing: "ధరలు",
+                navBook: "బుక్",
+
+                update1: "📍 ప్రస్తుతం సేవలు అందిస్తున్న ప్రాంతాలు: విశాఖపట్నం • విజయనగరం • భీమిలి • వేపగుంట • పెందుర్తి",
+                update2: "📍 ప్రస్తుతం సేవలు అందిస్తున్న ప్రాంతాలు: విశాఖపట్నం • విజయనగరం • భీమిలి • వేపగుంట • పెందుర్తి",
+
+                logo: "నైపుణ్యం 🏠",
+                heroTitle: "నమ్మకమైన కార్పెంటర్లు మరియు పెయింటర్లను కనుగొనండి",
+                heroDesc: "Naipunya మీకు నిపుణులైన కార్పెంటర్లు మరియు పెయింటర్లను కనెక్ట్ చేస్తుంది.",
+
+                bookBtn: "సేవ బుక్ చేయండి",
+                joinBtn: "వర్కర్‌గా చేరండి",
+
+                servicesTitle: "మా సేవలు",
+                service1: "కార్పెంట్రీ",
+                service1desc: "ఫర్నిచర్ రిపేర్, అల్మారాలు మరియు చెక్క పనులు.",
+                service2: "హౌస్ పెయింటింగ్",
+                service2desc: "ఇంటీరియర్ మరియు ఎక్స్‌టీరియర్ పెయింటింగ్.",
+                service3: "వుడ్ కార్వింగ్",
+                service3desc: "దేవాలయ చెక్క పనులు మరియు అలంకరణలు.",
+
+                howTitle: "ఎలా పని చేస్తుంది",
+                step1: "1. సేవ కోరండి",
+                step1desc: "మీ పని వివరాలు పంపండి.",
+                step2: "2. మేము కనెక్ట్ చేస్తాము",
+                step2desc: "మేము నిపుణులైన కార్మికులతో మిమ్మల్ని కలుపుతాము.",
+                step3: "3. పని పూర్తవుతుంది",
+                step3desc: "పని త్వరగా పూర్తవుతుంది.",
+
+                craftTitle: "మా నిపుణులైన కార్మికులు",
+                craftDesc: "అనుభవజ్ఞులైన కార్మికులు మీకు మంచి నాణ్యతతో కార్పెంట్రీ, పెయింటింగ్ మరియు చెక్క పనులు చేస్తారు.",
+
+                carpenterShanmukaRao: "శన్ముఖా రావు",
+                carpenter1Title: "మాస్టర్ కార్పెంటర్",
+                carpenter1Desc1: "19 సంవత్సరాల అనుభవంతో అల్మారాలు, వార్డ్రోబ్‌లు, కిచెన్ క్యాబినెట్‌లు మరియు చెక్క ఫర్నిచర్ పనులు చేస్తారు.",
+                carpenter1Desc2: "3–4 మంది కార్పెంటర్ల టీమ్‌ను నడిపిస్తారు.",
+                carpenter1Desc3: "పూర్తి ఫ్లాట్ కార్పెంట్రీ పనిలో నైపుణ్యం.",
+
+                carpenterSrinivas: "స్రినివాస్",
+                carpenter2Title: "సీనియర్ కార్పెంటర్",
+                carpenter2Desc1: "19 సంవత్సరాల అనుభవంతో అల్మారాలు, వార్డ్రోబ్‌లు మరియు కిచెన్ చెక్క పనులు చేస్తారు.",
+                carpenter2Desc2: "3–4 మంది కార్పెంటర్ల టీమ్‌ను నడిపిస్తారు.",
+                carpenter2Desc3: "వార్డ్రోబ్ మరియు కిచెన్ చెక్క పనిలో ప్రత్యేక అనుభవం.",
+
+                painterApparao: "అప్పారావు",
+                painterTitle: "ప్రొఫెషనల్ పెయింటర్",
+                painterDesc1: "15 సంవత్సరాల అనుభవంతో ఇంటీరియర్ మరియు ఎక్స్‌టీరియర్ పెయింటింగ్.",
+                painterDesc2: "3–4 మంది పెయింటర్ల టీమ్‌ను నడిపిస్తారు.",
+                painterDesc3: "స్మూత్ ఫినిష్ మరియు మోడర్న్ వాల్ డిజైన్‌లలో నైపుణ్యం.",
+
+                carverSantosh: "శంతోష్",
+                carverTitle: "వుడ్ కార్వింగ్ కళాకారుడు",
+                carverDesc1: "17 సంవత్సరాల అనుభవంతో దేవాలయ తలుపులు మరియు చెక్క అలంకరణ పనులు.",
+                carverDesc2: "3 మంది కార్వింగ్ కార్మికుల టీమ్‌ను నడిపిస్తారు.",
+                carverDesc3: "దేవుళ్ల చెక్క కార్వింగ్‌లో ప్రత్యేక ప్రతిభ.",
+
+                customerReviewsTitle: "కస్టమర్ రేవ్లు",
+
+                requestServiceTitle: "పని కోసం రిక్వెస్ట్ పంపండి",
+                requestServiceDesc: "మీకు ఏ పని కావాలో మరియు మీకు సరైన తేదీ చెప్పండి. మా పనివాళ్లు త్వరలో మీతో మాట్లాడతారు.",
+                yourName: "మీ పేరు",
+                phoneNumber: "ఫోన్ నంబర్",
+                cityArea: "పట్టణం / ప్రాంతం",
+                selectService: "పని ఎంచుకోండి",
+                carpentry: "మర్రి పని",
+                painting: "ఇంటి పెయింటింగ్",
+                woodCarving: "మర్రి చెక్క పని",
+                workDescription: "మీకు కావాల్సిన పని వివరంగా రాయండి",
+                submitRequest: "రిక్వెస్ట్ పంపండి",
+
+                joinWorkerTitle: "వర్కర్ గా చేరండి",
+                workerName: "వర్కర్ పేరు",
+                city: "పట్టణం",
+                carpenter: "కార్పెంటర్",
+                painter: "పెయింటర్",
+                experienceYears: "ఎన్ని సంవత్సరాల అనుభవం",
+                tellWork: "మీ పని గురించి చెప్పండి",
+                applyNow: "అప్లై చేయండి",
+
+                pricingTitle: "ప్రొఫెషనల్స్ కోసం",
+                starterPlan: "స్టార్టర్",
+                starterDesc: "నెలకు 5 లీడ్స్",
+                proPlan: "ప్రో",
+                proDesc: "అన్లిమిటెడ్ లీడ్స్",
+                businessPlan: "బిజినెస్",
+                businessDesc: "ప్రాధాన్యత జాబ్ లిస్టింగ్",
+
+                bookTitle: "సేవ అభ్యర్థన",
+                submitBtn: "అభ్యర్థన పంపండి",
+
+                footerTitle: "నైపుణ్య",
+                footerDesc: "నైపుణ్యం కలిగిన కార్పెంటర్లు, పెయింటర్లు మరియు శిల్పులను నాణ్యమైన పనికి అవసరమైన ఇళ్లతో కలుపుతున్నాం.",
+                quickLinks: "త్వరిత లింకులు",
+                footerContact: "సంప్రదించండి",
+
+                customerName: "కస్టమర్ పేరు",
+                customerPhone: "కస్టమర్ ఫోన్ నంబర్",
+                customerCity: "కస్టమర్ నగరం",
+                customerService: "కస్టమర్ సేవ",
+                customerDescription: "పని వివరించండి (ఉదాహరణ: అల్మిరా రిపేర్, తలుపు చెక్క పనులు, మొత్తం ఇంటి పెయింటింగ్)",
+                submitReview: "సమీక్ష పంపండి",
+
+                workerName: "వర్కర్ పేరు",
+                workerCity: "వర్కర్ నగరం",
+                workerService: "వర్కర్ సేవ",
+                workerExperience: "అనుభవం సంవత్సరాలు",
+                workerDescription: "పని వివరించండి (ఉదాహరణ: అల్మిరా రిపేర్, తలుపు చెక్క పనులు, మొత్తం ఇంటి పెయింటింగ్)",
+                submitReview: "సమీక్ష పంపండి",
+            },
+
+            hi: {
+                navHome: "होम",
+                navServices: "सेवाएं",
+                navHow: "कैसे काम करता है",
+                navPricing: "कीमत",
+                navBook: "बुक",
+
+                update1: "📍 वर्तमान में सेवाएं उपलब्ध हैं: विशाखापत्तनम • विजयनगरम • भीमिली • वेपागुंटा • पेंदुर्थी",
+                update2: "📍 वर्तमान में सेवाएं उपलब्ध हैं: विशाखापत्तनम • विजयनगरम • भीमिली • वेपागुंटा • पेंदुर्थी",
+
+                logo: "नैपुन्या 🏠",
+                heroTitle: "विश्वसनीय बढ़ई और पेंटर खोजें",
+                heroDesc: "Naipunya आपको पेशेवर बढ़ई और पेंटर से जोड़ता है।",
+
+                bookBtn: "सेवा बुक करें",
+                joinBtn: "वर्कर के रूप में जुड़ें",
+
+                servicesTitle: "हमारी सेवाएं",
+                service1: "बढ़ई काम",
+                service1desc: "फर्नीचर रिपेयर और कस्टम वुड वर्क।",
+                service2: "हाउस पेंटिंग",
+                service2desc: "इंटीरियर और एक्सटीरियर पेंटिंग।",
+                service3: "वुड कार्विंग",
+                service3desc: "मंदिर और सजावटी लकड़ी का काम।",
+
+                howTitle: "कैसे काम करता है",
+                step1: "1. सेवा अनुरोध करें",
+                step1desc: "अपनी आवश्यकता भेजें।",
+                step2: "2. वर्कर से कनेक्ट",
+                step2desc: "हम आपको कारीगर से जोड़ते हैं।",
+                step3: "3. काम पूरा",
+                step3desc: "काम जल्दी पूरा होगा।",
+
+                craftTitle: "हमारे विशेषज्ञ कारीगर",
+                craftDesc: "अनुभवी कारीगर जो उच्च गुणवत्ता का बढ़ई, पेंटिंग और लकड़ी का काम करते हैं।",
+
+                carpenterShanmukaRao: "शन्मुखा राओ",
+                carpenter1Title: "मास्टर बढ़ई",
+                carpenter1Desc1: "19+ साल का अनुभव अलमारी, वार्डरोब, किचन कैबिनेट और फर्नीचर वुडवर्क में।",
+                carpenter1Desc2: "3–4 बढ़ईयों की टीम का नेतृत्व करते हैं।",
+                carpenter1Desc3: "पूरा फ्लैट बढ़ई काम में विशेषज्ञता।",
+
+                carpenterSrinivas: "स्रिनिवास",
+                carpenter2Title: "सीनियर बढ़ई",
+                carpenter2Desc1: "19+ साल का अनुभव अलमारी, वार्डरोब और किचन वुडवर्क में।",
+                carpenter2Desc2: "3–4 बढ़ईयों की टीम का नेतृत्व करते हैं।",
+                carpenter2Desc3: "अलमारी और किचन वुडवर्क में विशेषज्ञ।",
+
+                painterApparao: "अपाराओ",
+                painterTitle: "प्रोफेशनल पेंटर",
+                painterDesc1: "15+ साल का अनुभव इंटीरियर और एक्सटीरियर पेंटिंग में।",
+                painterDesc2: "3–4 पेंटर की टीम का नेतृत्व करते हैं।",
+                painterDesc3: "स्मूथ फिनिश और मॉडर्न वॉल डिजाइन में विशेषज्ञ।",
+
+                carverSantosh: "संथोष",
+                carverTitle: "वुड कार्विंग कलाकार",
+                carverDesc1: "17 साल का अनुभव मंदिर दरवाजे और सजावटी लकड़ी के काम में।",
+                carverDesc2: "3 कारीगरों की टीम का नेतृत्व करते हैं।",
+                carverDesc3: "लकड़ी पर भगवान की आकृति बनाने में विशेष प्रतिभा।",
+
+                customerReviewsTitle: "ग्राहकों की रिव्यू",
+
+                requestServiceTitle: "सेवा का अनुरोध करें",
+                requestServiceDesc: "आपको किस प्रकार का काम चाहिए और पसंदीदा तारीख बताएं। हमारे कारीगर आपसे जल्द संपर्क करेंगे।",
+                yourName: "आपका नाम",
+                phoneNumber: "फोन नंबर",
+                cityArea: "शहर / इलाका",
+                selectService: "सेवा चुनें",
+                carpentry: "बढ़ई का काम",
+                painting: "घर की पेंटिंग",
+                woodCarving: "लकड़ी की नक्काशी",
+                workDescription: "आपको किस प्रकार का काम चाहिए लिखें",
+                submitRequest: "अनुरोध भेजें",
+
+                joinWorkerTitle: "वर्कर के रूप में जुड़ें",
+                workerName: "वर्कर का नाम",
+                city: "शहर",
+                carpenter: "बढ़ई",
+                painter: "पेंटर",
+                experienceYears: "अनुभव के वर्ष",
+                tellWork: "अपने काम के बारे में बताएं",
+                applyNow: "आवेदन करें",
+
+                pricingTitle: "प्रोफेशनल्स के लिए",
+                starterPlan: "स्टार्टर",
+                starterDesc: "5 लीड्स प्रति माह",
+                proPlan: "प्रो",
+                proDesc: "अनलिमिटेड लीड्स",
+                businessPlan: "बिजनेस",
+                businessDesc: "प्रायोरिटी जॉब लिस्टिंग",
+
+                bookTitle: "सेवा अनुरोध",
+                submitBtn: "रिक्वेस्ट भेजें",
+
+                footerTitle: "नैपुण्य",
+                footerDesc: "कुशल बढ़ई, पेंटर और कारीगरों को उन घरों से जोड़ना जिन्हें गुणवत्तापूर्ण काम की आवश्यकता है।",
+                quickLinks: "त्वरित लिंक",
+                footerContact: "संपर्क",
+
+                customerName: "ग्राहक का नाम",
+                customerPhone: "ग्राहक का फोन नंबर",
+                customerCity: "ग्राहक का शहर",
+                customerService: "ग्राहक की सेवा",
+                customerDescription: "काम का विवरण दें (उदाहरण: अलमारी मरम्मत, दरवाज़े की नक्काशी, पूरे घर की पेंटिंग)",
+                submitReview: "समीक्षा जमा करें",
+
+                workerName: "कामगार का नाम",
+                workerCity: "कामगार का शहर",
+                workerService: "कामगार की सेवा",
+                workerExperience: "अनुभव के वर्ष",
+                workerDescription: "काम का विवरण दें (उदाहरण: अलमारी मरम्मत, दरवाज़े की नक्काशी, पूरे घर की पेंटिंग)",
+                submitReview: "समीक्षा जमा करें",
+            }
+
+        };
+
+        document.getElementById("languageSwitcher").addEventListener("change", function () {
+
+            const lang = this.value;
+
+            /* TEXT CONTENT */
+            for (const key in translations[lang]) {
+
+                const element = document.getElementById(key);
+
+                if (element) {
+                    element.innerText = translations[lang][key];
+                }
+
+            }
+
+            /* INPUT PLACEHOLDERS */
+
+            const placeholders = document.querySelectorAll("[data-translate-placeholder]");
+
+            placeholders.forEach(el => {
+
+                const key = el.getAttribute("data-translate-placeholder");
+
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+
+            });
+
+        });
+
+        function showBooking() {
+
+            document.getElementById("book").style.display = "block";
+            document.getElementById("workerSection").style.display = "none";
+
+            document.getElementById("book").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+        function showWorker() {
+
+            document.getElementById("workerSection").style.display = "block";
+            document.getElementById("book").style.display = "none";
+
+            document.getElementById("workerSection").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+        const slides = document.querySelectorAll(".hero-slide");
+        let index = 0;
+
+        function changeHeroSlide() {
+
+            slides[index].classList.remove("active");
+
+            index++;
+
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            slides[index].classList.add("active");
+
+        }
+
+        setInterval(changeHeroSlide, 3000);
+
+        const forms = document.querySelectorAll("form");
+
+        forms.forEach(form => {
+
+            form.addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: "POST",
+                    body: formData
+                })
+                    .then(response => {
+
+                        document.getElementById("successModal").style.display = "flex";
+                        form.reset();
+
+                    })
+                    .catch(error => {
+                        alert("Something went wrong. Please try again.");
+                    });
+
+            });
+
+        });
+        function closeModal() {
+            document.getElementById("successModal").style.display = "none";
+        }
+
+        function toggleMenu() {
+
+            const nav = document.querySelector(".nav-links");
+
+            nav.classList.toggle("active");
+
+        }
+    </script>
+
+</body>
+
+</html>
