@@ -985,45 +985,24 @@
             Our craftsmen will contact you shortly.
         </p>
 
-        <form id="customerForm" action="https://formsubmit.co/naipunyawork@gmail.com" method="POST">
-
-            <input type="hidden" name="_captcha" value="false">
-
+        <form id="customerForm" action="mailto:naipunyawork@gmail.com" method="POST" enctype="text/plain">
             <div class="form-grid">
-
-                <input type="text" name="name" placeholder="Your Name" id="customerName" required
-                    data-translate-placeholder="yourName">
-
-                <input type="tel" name="phone" placeholder="Phone Number" id="customerPhone" required
-                    data-translate-placeholder="phoneNumber">
-
-                <input type="text" name="city" placeholder="City / Area" id="customerCity"
-                    data-translate-placeholder="cityArea">
-
+                <input type="text" name="name" placeholder="Your Name" id="customerName" required>
+                <input type="tel" name="phone" placeholder="Phone Number" id="customerPhone" required>
+                <input type="text" name="city" placeholder="City / Area" id="customerCity">
                 <select name="service" required>
-
-                    <option value="" id="selectService">Select Service</option>
-
-                    <option id="carpentry">Carpentry</option>
-
-                    <option id="painting">House Painting</option>
-
-                    <option id="woodCarving">Wood Carving</option>
-
+                    <option value="">Select Service</option>
+                    <option value="Carpentry">Carpentry</option>
+                    <option value="House Painting">House Painting</option>
+                    <option value="Wood Carving">Wood Carving</option>
                 </select>
-
                 <input type="date" name="schedule" id="customerSchedule" required>
-
             </div>
 
             <textarea name="work" id="customerDescription"
-                placeholder="Describe the work you need (Example: wardrobe repair, door carving, full house painting)"
-                data-translate-placeholder="workDescription"></textarea>
+                placeholder="Describe the work you need (Example: wardrobe repair, door carving, full house painting)"></textarea>
 
-            <button type="submit" class="submit" id="submitRequest">
-                Submit Request
-            </button>
-
+            <button type="submit" class="submit">Submit Request</button>
         </form>
 
     </section>
@@ -1032,42 +1011,22 @@
 
         <h2 id="joinWorkerTitle">Join as Worker</h2>
 
-        <form id="workerForm" action="https://formsubmit.co/naipunyawork@gmail.com" method="POST">
-
-            <input type="hidden" name="_captcha" value="false">
-
+        <form id="workerForm" action="mailto:naipunyawork@gmail.com" method="POST" enctype="text/plain">
             <div class="form-grid">
-
-                <input type="text" name="name" placeholder="Worker Name" id="workerName" required
-                    data-translate-placeholder="workerName">
-
-                <input type="tel" name="phone" placeholder="Phone Number" id="workerPhone" required
-                    data-translate-placeholder="phoneNumber">
-
-                <input type="text" name="city" placeholder="City" id="workerCity" data-translate-placeholder="city">
-
+                <input type="text" name="name" placeholder="Worker Name" id="workerName" required>
+                <input type="tel" name="phone" placeholder="Phone Number" id="workerPhone" required>
+                <input type="text" name="city" placeholder="City" id="workerCity">
                 <select name="skill">
-
-                    <option id="carpenter">Carpenter</option>
-
-                    <option id="painter">Painter</option>
-
-                    <option id="woodCarving">Wood Carving</option>
-
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Painter">Painter</option>
+                    <option value="Wood Carving">Wood Carving</option>
                 </select>
-
-                <input type="text" name="experience" placeholder="Years of Experience" id="workerExperience"
-                    data-translate-placeholder="experienceYears">
-
+                <input type="text" name="experience" placeholder="Years of Experience" id="workerExperience">
             </div>
 
-            <textarea name="details" placeholder="Tell us about your work" id="workerDetails"
-                data-translate-placeholder="tellWork"></textarea>
+            <textarea name="details" placeholder="Tell us about your work" id="workerDetails"></textarea>
 
-            <button type="submit" class="submit" id="applyNow">
-                Apply
-            </button>
-
+            <button type="submit" class="submit">Apply</button>
         </form>
 
     </section>
