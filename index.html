@@ -473,6 +473,28 @@
             cursor: pointer;
         }
 
+        .work-carousel {
+            width: 100%;
+            max-width: 800px;
+            height: 420px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-slide {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+
+        .work-slide.active {
+            display: block;
+        }
+
         /* RESPONSIVE */
 
         @media (max-width:900px) {
@@ -854,6 +876,31 @@
 
     <section class="section">
 
+        <h2 id="ourWorkTitle">Our Work</h2>
+
+        <div class="work-carousel">
+
+            <img class="work-slide active" src="images/1000060252.jpg">
+            <img class="work-slide" src="images/1000060255.jpg">
+            <img class="work-slide" src="images/1000060326.jpg">
+            <img class="work-slide" src="images/1000060341.jpg">
+            <img class="work-slide" src="images/1000060264.jpg">
+            <img class="work-slide active" src="images/1000060288.jpg">
+            <img class="work-slide" src="images/1000060291.jpg">
+            <img class="work-slide" src="images/1000060320.jpg">
+            <img class="work-slide" src="images/1000060323.jpg">
+            <img class="work-slide" src="images/1000060308.jpg">
+            <img class="work-slide" src="images/1000060314.jpg">
+            <img class="work-slide" src="images/1000060317.jpg">
+            <img class="work-slide" src="images/1000060355.jpg">
+            <img class="work-slide" src="images/1000060386.jpg">
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
         <h2 id="customerReviewsTitle">Customer Reviews</h2>
 
         <div class="review-marquee">
@@ -985,50 +1032,76 @@
             Our craftsmen will contact you shortly.
         </p>
 
-        <form id="customerForm" action="mailto:naipunyawork@gmail.com" method="POST" enctype="text/plain">
+        <form action="https://formsubmit.co/naipunyawork@gmail.com" method="POST">
+
+            <input type="hidden" name="_subject" value="New Customer Service Request">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+
             <div class="form-grid">
-                <input type="text" name="name" placeholder="Your Name" id="customerName" required>
-                <input type="tel" name="phone" placeholder="Phone Number" id="customerPhone" required>
-                <input type="text" name="city" placeholder="City / Area" id="customerCity">
-                <select name="service" required>
-                    <option value="">Select Service</option>
-                    <option value="Carpentry">Carpentry</option>
-                    <option value="House Painting">House Painting</option>
-                    <option value="Wood Carving">Wood Carving</option>
+                <input type="text" name="Name" placeholder="Your Name" data-translate-placeholder="yourName" required>
+
+                <input type="tel" name="Phone" placeholder="Phone Number" data-translate-placeholder="phoneNumber"
+                    required>
+
+                <input type="text" name="City" placeholder="City / Area" data-translate-placeholder="cityArea">
+
+                <select name="Service" required>
+                    <option value="" data-translate="selectService">Select Service</option>
+                    <option value="Carpentry" data-translate="carpentry">Carpentry</option>
+                    <option value="House Painting" data-translate="housePainting">House Painting</option>
+                    <option value="Wood Carving" data-translate="woodCarving">Wood Carving</option>
                 </select>
-                <input type="date" name="schedule" id="customerSchedule" required>
+
+                <input type="date" name="Schedule" required>
             </div>
 
-            <textarea name="work" id="customerDescription"
-                placeholder="Describe the work you need (Example: wardrobe repair, door carving, full house painting)"></textarea>
+            <textarea name="WorkDetails" placeholder="Describe the work"
+                data-translate-placeholder="workDescription"></textarea>
 
             <button type="submit" class="submit">Submit Request</button>
-        </form>
 
+        </form>
     </section>
 
     <section id="workerSection" class="booking">
 
         <h2 id="joinWorkerTitle">Join as Worker</h2>
 
-        <form id="workerForm" action="mailto:naipunyawork@gmail.com" method="POST" enctype="text/plain">
+        <form id="workerForm" action="https://formsubmit.co/naipunyawork@gmail.com" method="POST">
+
+            <input type="hidden" name="_subject" value="New Worker Application">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
             <div class="form-grid">
-                <input type="text" name="name" placeholder="Worker Name" id="workerName" required>
-                <input type="tel" name="phone" placeholder="Phone Number" id="workerPhone" required>
-                <input type="text" name="city" placeholder="City" id="workerCity">
-                <select name="skill">
-                    <option value="Carpenter">Carpenter</option>
-                    <option value="Painter">Painter</option>
-                    <option value="Wood Carving">Wood Carving</option>
+
+                <input type="text" name="Worker Name" placeholder="Worker Name" data-translate-placeholder="workerName"
+                    required>
+
+                <input type="tel" name="Phone" placeholder="Phone Number" data-translate-placeholder="phoneNumber"
+                    required>
+
+                <input type="text" name="City" placeholder="City" data-translate-placeholder="city">
+
+                <select name="Skill">
+                    <option data-translate="carpenter">Carpenter</option>
+                    <option data-translate="painter">Painter</option>
+                    <option data-translate="woodCarving">Wood Carving</option>
                 </select>
-                <input type="text" name="experience" placeholder="Years of Experience" id="workerExperience">
+
+                <input type="text" name="Experience" placeholder="Years of Experience"
+                    data-translate-placeholder="experienceYears">
+
             </div>
 
-            <textarea name="details" placeholder="Tell us about your work" id="workerDetails"></textarea>
+            <textarea name="Details" placeholder="Tell us about your work"
+                data-translate-placeholder="tellWork"></textarea>
 
-            <button type="submit" class="submit">Apply</button>
+            <button type="submit" class="submit" id="applyBtn">Apply</button>
+
         </form>
-
     </section>
 
     <footer class="footer">
@@ -1135,6 +1208,7 @@
                 carverDesc2: "Leads a team of 3 skilled carving artisans.",
                 carverDesc3: "Special talent in carving gods on wooden doors and temple work.",
 
+                ourWorkTitle: "Our Work",
                 customerReviewsTitle: "Customer Reviews",
 
                 requestServiceTitle: "Request a Service",
@@ -1182,11 +1256,21 @@
                 submitReview: "Submit Review",
 
                 workerName: "Worker Name",
-                workerCity: "Worker City",
-                workerService: "Worker Service",
-                workerExperience: "Years of Experience",
-                workerDescription: "Describe the work (Example: wardrobe repair, door carving, full house painting)",
-                submitReview: "Submit Review",
+                phoneNumber: "Phone Number",
+                city: "City",
+                experienceYears: "Years of Experience",
+                tellWork: "Tell us about your work",
+                applyBtn: "Apply",
+                carpenter: "Carpenter",
+                painter: "Painter",
+                woodCarving: "Wood Carving",
+
+                selectService: "Select Service",
+                carpentry: "Carpentry",
+                housePainting: "House Painting",
+                woodCarving: "Wood Carving"
+
+
             },
 
             te: {
@@ -1249,6 +1333,7 @@
                 carverDesc2: "3 మంది కార్వింగ్ కార్మికుల టీమ్‌ను నడిపిస్తారు.",
                 carverDesc3: "దేవుళ్ల చెక్క కార్వింగ్‌లో ప్రత్యేక ప్రతిభ.",
 
+                ourWorkTitle: "మా పని",
                 customerReviewsTitle: "కస్టమర్ రేవ్లు",
 
                 requestServiceTitle: "పని కోసం రిక్వెస్ట్ పంపండి",
@@ -1295,12 +1380,20 @@
                 customerDescription: "పని వివరించండి (ఉదాహరణ: అల్మిరా రిపేర్, తలుపు చెక్క పనులు, మొత్తం ఇంటి పెయింటింగ్)",
                 submitReview: "సమీక్ష పంపండి",
 
-                workerName: "వర్కర్ పేరు",
-                workerCity: "వర్కర్ నగరం",
-                workerService: "వర్కర్ సేవ",
-                workerExperience: "అనుభవం సంవత్సరాలు",
-                workerDescription: "పని వివరించండి (ఉదాహరణ: అల్మిరా రిపేర్, తలుపు చెక్క పనులు, మొత్తం ఇంటి పెయింటింగ్)",
-                submitReview: "సమీక్ష పంపండి",
+                workerName: "కార్మికుడి పేరు",
+                phoneNumber: "ఫోన్ నంబర్",
+                city: "నగరం",
+                experienceYears: "అనుభవం సంవత్సరాలు",
+                tellWork: "మీ పని గురించి చెప్పండి",
+                applyBtn: "దరఖాస్తు చేయండి",
+                carpenter: "మర్రి పని",
+                painter: "పెయింటర్",
+                woodCarving: "వుడ్ కార్వింగ్",
+
+                selectService: "సేవను ఎంచుకోండి",
+                carpentry: "మర్రి పని",
+                housePainting: "ఇంటి పెయింటింగ్",
+                woodCarving: "వుడ్ కార్వింగ్"
             },
 
             hi: {
@@ -1363,6 +1456,7 @@
                 carverDesc2: "3 कारीगरों की टीम का नेतृत्व करते हैं।",
                 carverDesc3: "लकड़ी पर भगवान की आकृति बनाने में विशेष प्रतिभा।",
 
+                ourWorkTitle: "हमारा काम",
                 customerReviewsTitle: "ग्राहकों की रिव्यू",
 
                 requestServiceTitle: "सेवा का अनुरोध करें",
@@ -1408,13 +1502,20 @@
                 customerService: "ग्राहक की सेवा",
                 customerDescription: "काम का विवरण दें (उदाहरण: अलमारी मरम्मत, दरवाज़े की नक्काशी, पूरे घर की पेंटिंग)",
                 submitReview: "समीक्षा जमा करें",
-
                 workerName: "कामगार का नाम",
-                workerCity: "कामगार का शहर",
-                workerService: "कामगार की सेवा",
-                workerExperience: "अनुभव के वर्ष",
-                workerDescription: "काम का विवरण दें (उदाहरण: अलमारी मरम्मत, दरवाज़े की नक्काशी, पूरे घर की पेंटिंग)",
-                submitReview: "समीक्षा जमा करें",
+                phoneNumber: "फोन नंबर",
+                city: "शहर",
+                experienceYears: "अनुभव के वर्ष",
+                tellWork: "अपने काम के बारे में बताएं",
+                applyBtn: "आवेदन करें",
+                carpenter: "बढ़ई",
+                painter: "पेंटर",
+                woodCarving: "लकड़ी नक्काशी",
+
+                selectService: "सेवा चुनें",
+                carpentry: "बढ़ई का काम",
+                housePainting: "घर पेंटिंग",
+                woodCarving: "लकड़ी की नक्काशी"
             }
 
         };
@@ -1435,7 +1536,6 @@
             }
 
             /* INPUT PLACEHOLDERS */
-
             const placeholders = document.querySelectorAll("[data-translate-placeholder]");
 
             placeholders.forEach(el => {
@@ -1448,8 +1548,41 @@
 
             });
 
+            /* DROPDOWN OPTIONS */
+            const options = document.querySelectorAll("[data-translate]");
+
+            options.forEach(el => {
+
+                const key = el.getAttribute("data-translate");
+
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+
+            });
+
         });
 
+        /* WORK CAROUSEL */
+
+        const workSlides = document.querySelectorAll(".work-slide");
+        let workIndex = 0;
+
+        function changeWorkSlide() {
+
+            workSlides[workIndex].classList.remove("active");
+
+            workIndex++;
+
+            if (workIndex >= workSlides.length) {
+                workIndex = 0;
+            }
+
+            workSlides[workIndex].classList.add("active");
+
+        }
+
+        setInterval(changeWorkSlide, 3500);
         function showBooking() {
 
             document.getElementById("book").style.display = "block";
@@ -1491,36 +1624,43 @@
 
         setInterval(changeHeroSlide, 3000);
 
-        const forms = document.querySelectorAll("form");
+        const customerForm = document.querySelector('#book form'); // Customer form
+        const workerForm = document.getElementById('workerForm');   // Worker form
+        const successModal = document.getElementById('successModal');
+        const modalTitle = successModal.querySelector('h2');
+        const modalText = successModal.querySelector('p');
 
-        forms.forEach(form => {
+        function handleFormSubmit(form, type) {
+            form.addEventListener('submit', function (event) {
+                // Optional: prevent default if using AJAX
+                // event.preventDefault();
 
-            form.addEventListener("submit", function (e) {
+                // Set modal text based on form type
+                if (type === 'customer') {
+                    modalTitle.textContent = '✅ Request Sent';
+                    modalText.textContent = 'Thank you! Our craftsmen will contact you soon.';
+                } else if (type === 'worker') {
+                    modalTitle.textContent = '✅ Application Sent';
+                    modalText.textContent = 'Thank you! We will review your application shortly.';
+                }
 
-                e.preventDefault();
+                // Show modal
+                successModal.style.display = 'flex';
 
-                const formData = new FormData(form);
-
-                fetch(form.action, {
-                    method: "POST",
-                    body: formData
-                })
-                    .then(response => {
-
-                        document.getElementById("successModal").style.display = "flex";
-                        form.reset();
-
-                    })
-                    .catch(error => {
-                        alert("Something went wrong. Please try again.");
-                    });
-
+                // Clear form fields
+                form.reset();
             });
-
-        });
-        function closeModal() {
-            document.getElementById("successModal").style.display = "none";
         }
+
+        // Apply to each form
+        handleFormSubmit(customerForm, 'customer');
+        handleFormSubmit(workerForm, 'worker');
+
+        // Close modal function
+        function closeModal() {
+            successModal.style.display = 'none';
+        }
+
 
         function toggleMenu() {
 
