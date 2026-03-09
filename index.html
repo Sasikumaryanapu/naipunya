@@ -1631,30 +1631,47 @@
         const modalText = successModal.querySelector('p');
 
         function handleFormSubmit(form, type) {
-            form.addEventListener('submit', function (event) {
-                // Optional: prevent default if using AJAX
-                // event.preventDefault();
 
-                // Set modal text based on form type
-                if (type === 'customer') {
-                    modalTitle.textContent = '✅ Request Sent';
-                    modalText.textContent = 'Thank you! Our craftsmen will contact you soon.';
-                } else if (type === 'worker') {
-                    modalTitle.textContent = '✅ Application Sent';
-                    modalText.textContent = 'Thank you! We will review your application shortly.';
-                }
+            form.addEventListener("submit", function (e) {
 
-                // Show modal
-                successModal.style.display = 'flex';
+                e.preventDefault(); // stop normal submit
 
-                // Clear form fields
-                form.reset();
+                fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form)
+                })
+                    .then(response => {
+
+                        if (type === "customer") {
+                            modalTitle.textContent = "✅ Request Sent";
+                            modalText.textContent = "Thank you! Our craftsmen will contact you soon.";
+                        }
+
+                        if (type === "worker") {
+                            modalTitle.textContent = "✅ Application Sent";
+                            modalText.textContent = "Thank you! We will review your application shortly.";
+                        }
+
+                        successModal.style.display = "flex";
+
+                        form.reset();
+
+                    })
+                    .catch(error => {
+                        alert("Something went wrong. Please try again.");
+                    });
+
             });
+
         }
 
-        // Apply to each form
-        handleFormSubmit(customerForm, 'customer');
-        handleFormSubmit(workerForm, 'worker');
+        handleFormSubmit(customerForm, "customer");
+        handleFormSubmit(workerForm, "worker");
+
+        function closeModal() {
+            successModal.style.display = "none";
+        }
+
 
         // Close modal function
         function closeModal() {
