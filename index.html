@@ -148,6 +148,22 @@
             color: white;
         }
 
+        .worker-link {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .worker-link a {
+            color: #8B5E3C;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .worker-link a:hover {
+            text-decoration: underline;
+        }
+
         .hero img {
             width: 420px;
             border-radius: 14px;
@@ -688,12 +704,21 @@
                 skilled workers instantly.
             </p>
 
+            <p style="font-size:14px;color:#666;margin-top:10px;">
+                ✔ Verified Craftsmen • ✔ Transparent Pricing • ✔ Site Inspection Available
+            </p>
             <div class="hero-buttons">
 
                 <button class="primary" id="bookBtn" onclick="showBooking()">Book Service</button>
-                <button class="secondary" id="joinBtn" onclick="showWorker()">Join as Worker</button>
+
+                <button class="secondary" id="quoteBtn" onclick="openInspection()">Quote Inspection</button>
 
             </div>
+
+            <p class="worker-link" id="areYouSkilledWorker">
+                Are you a skilled worker?
+                <a href="#" id="joinBtn" onclick="showWorker()">Join as Worker →</a>
+            </p>
 
         </div>
 
@@ -1163,6 +1188,8 @@
 
                 bookBtn: "Book Service",
                 joinBtn: "Join as Worker",
+                quoteBtn: "Quote Inspection",
+                areYouSkilledWorker: "Are you a skilled worker?",
 
                 servicesTitle: "Our Services",
                 service1: "Carpentry",
@@ -1288,6 +1315,8 @@
 
                 bookBtn: "సేవ బుక్ చేయండి",
                 joinBtn: "వర్కర్‌గా చేరండి",
+                quoteBtn: "పరిశీలన ధర అంచనా",
+                areYouSkilledWorker: "మీరు నైపుణ్యం కలిగిన కార్మికుడా?",
 
                 servicesTitle: "మా సేవలు",
                 service1: "కార్పెంట్రీ",
@@ -1411,6 +1440,8 @@
 
                 bookBtn: "सेवा बुक करें",
                 joinBtn: "वर्कर के रूप में जुड़ें",
+                quoteBtn: "कोई इंस्पेक्टर के रूप में अनुरोध करें",
+                areYouSkilledWorker: "क्या आप एक कुशल कार्यकर्ता हैं?",
 
                 servicesTitle: "हमारी सेवाएं",
                 service1: "बढ़ई काम",
@@ -1562,6 +1593,26 @@
 
         });
 
+        /* HERO CAROUSEL */
+        const slides = document.querySelectorAll(".hero-slide");
+        let index = 0;
+
+        function changeHeroSlide() {
+
+            slides[index].classList.remove("active");
+
+            index++;
+
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            slides[index].classList.add("active");
+
+        }
+
+        setInterval(changeHeroSlide, 3000);
+
         /* WORK CAROUSEL */
 
         const workSlides = document.querySelectorAll(".work-slide");
@@ -1582,6 +1633,7 @@
         }
 
         setInterval(changeWorkSlide, 3500);
+
         function showBooking() {
 
             document.getElementById("book").style.display = "block";
@@ -1604,24 +1656,25 @@
 
         }
 
-        const slides = document.querySelectorAll(".hero-slide");
-        let index = 0;
+        function openInspection() {
 
-        function changeHeroSlide() {
+            document.getElementById("book").style.display = "block";
+            document.getElementById("workerSection").style.display = "none";
 
-            slides[index].classList.remove("active");
+            /* auto select carpentry for now */
+            const serviceSelect = document.querySelector('#book select[name="Service"]');
 
-            index++;
-
-            if (index >= slides.length) {
-                index = 0;
+            if (serviceSelect) {
+                serviceSelect.value = "Carpentry";
             }
 
-            slides[index].classList.add("active");
+            document.getElementById("book").scrollIntoView({
+                behavior: "smooth"
+            });
 
         }
 
-        setInterval(changeHeroSlide, 3000);
+
 
         const customerForm = document.querySelector('#book form'); // Customer form
         const workerForm = document.getElementById('workerForm');   // Worker form
