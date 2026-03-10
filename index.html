@@ -655,6 +655,13 @@
                 transform: translateX(-100%);
             }
         }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
     </style>
 
 </head>
@@ -707,6 +714,8 @@
             <p style="font-size:14px;color:#666;margin-top:10px;" id="tagLine">
                 ✔ Verified Craftsmen • ✔ Transparent Pricing • ✔ Site Inspection Available
             </p>
+            <!-- <p id="locationText">Detecting location...</p> -->
+
             <div class="hero-buttons">
 
                 <button class="primary" id="bookBtn" onclick="showBooking()">Book Service</button>
@@ -730,11 +739,11 @@
 
             <img class="hero-slide" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828"> -->
 
-            <img class="hero-slide active" src="images/IMG-20260308-WA0002.jpg">
+            <img class="hero-slide active" src="images/1000060252.jpg">
 
-            <img class="hero-slide" src="images/IMG-20260308-WA0005.jpg">
+            <img class="hero-slide" src="images/1000060355.jpg">
 
-            <img class="hero-slide" src="images/IMG-20260308-WA0013.jpg">
+            <img class="hero-slide" src="images/1000060317.jpg">
 
             <img class="hero-slide" src="images/IMG-20260308-WA0014.jpg">
 
@@ -1079,6 +1088,7 @@
                 </select>
 
                 <input type="date" name="Schedule" required>
+                <input type="hidden" name="location" id="locationField">
             </div>
 
             <textarea name="WorkDetails" placeholder="Describe the work"
@@ -1124,7 +1134,7 @@
                 data-translate-placeholder="tellWork"></textarea>
 
             <button type="submit" class="submit" id="applyBtn">Apply</button>
-
+            <input type="hidden" name="location" id="locationField">
         </form>
     </section>
 
@@ -1168,7 +1178,28 @@
         </div>
     </div>
 
+    <a href="https://wa.me/917729820554?text=Hi%20I%20need%20a%20service" target="_blank" class="whatsapp-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" width="55">
+    </a>
+
+
+
+
+
     <script>
+        fetch("https://ipinfo.io/json")
+            .then(res => res.json())
+            .then(data => {
+                // document.getElementById("locationText").innerText =
+                //     "Local workers in " + data.city;
+
+                const locationField = document.getElementById("locationField");
+
+                if (locationField) {
+                    locationField.value = city;
+                }
+            });
+
 
         const translations = {
 
