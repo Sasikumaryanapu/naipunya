@@ -7,9 +7,11 @@
 
     <title>Naipunya | Carpenter & Painter Platform</title>
 
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -1196,7 +1198,7 @@
                 const locationField = document.getElementById("locationField");
 
                 if (locationField) {
-                    locationField.value = city;
+                    locationField.value = data.city;
                 }
             });
 
@@ -1770,6 +1772,22 @@
             const nav = document.querySelector(".nav-links");
 
             nav.classList.toggle("active");
+
+        }
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", () => {
+
+                navigator.serviceWorker.register("/service-worker.js")
+                    .then(reg => {
+                        console.log("Service Worker Registered", reg);
+                    })
+                    .catch(err => {
+                        console.log("Service Worker Registration Failed", err);
+                    });
+
+            });
 
         }
     </script>
