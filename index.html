@@ -1392,39 +1392,85 @@
 
     <script>
 
+        // let deferredPrompt;
+
+        // window.addEventListener('beforeinstallprompt', (e) => {
+
+        //     e.preventDefault();
+        //     deferredPrompt = e;
+
+        //     // show modal after 5 seconds
+        //     setTimeout(() => {
+        //         document.getElementById("installModal").style.display = "flex";
+        //     }, 5000);
+
+        // });
+
+        // document.getElementById("installBtn").addEventListener("click", async () => {
+
+        //     if (deferredPrompt) {
+
+        //         deferredPrompt.prompt();
+
+        //         const { outcome } = await deferredPrompt.userChoice;
+
+        //         if (outcome === "accepted") {
+        //             console.log("PWA installed");
+        //         }
+
+        //         deferredPrompt = null;
+
+        //         closeInstallModal();
+        //     }
+
+        // });
+
         let deferredPrompt;
 
-        window.addEventListener('beforeinstallprompt', (e) => {
-
+        // Capture install event
+        window.addEventListener("beforeinstallprompt", (e) => {
             e.preventDefault();
             deferredPrompt = e;
 
-            // show modal after 5 seconds
+            // show install modal after 5 seconds
             setTimeout(() => {
-                document.getElementById("installModal").style.display = "flex";
+                const modal = document.getElementById("installModal");
+                if (modal) {
+                    modal.style.display = "flex";
+                }
             }, 5000);
-
         });
 
+        // Install button click
         document.getElementById("installBtn").addEventListener("click", async () => {
 
-            if (deferredPrompt) {
-
-                deferredPrompt.prompt();
-
-                const { outcome } = await deferredPrompt.userChoice;
-
-                if (outcome === "accepted") {
-                    console.log("PWA installed");
-                }
-
-                deferredPrompt = null;
-
-                closeInstallModal();
+            if (!deferredPrompt) {
+                alert("Install option not available yet. Please use Chrome browser.");
+                return;
             }
 
+            // Show install prompt
+            deferredPrompt.prompt();
+
+            const { outcome } = await deferredPrompt.userChoice;
+
+            if (outcome === "accepted") {
+                console.log("PWA installed");
+            } else {
+                console.log("User dismissed install");
+            }
+
+            deferredPrompt = null;
+            closeInstallModal();
         });
 
+        // Close modal
+        function closeInstallModal() {
+            const modal = document.getElementById("installModal");
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
         function closeInstallModal() {
             document.getElementById("installModal").style.display = "none";
         }
@@ -2164,13 +2210,13 @@
 
         // Mobile PWA Install Fix
         document.addEventListener('DOMContentLoaded', () => {
-            
+
             // Check if mobile device
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            
+
             // Check if modal has been shown before
             const modalShown = localStorage.getItem('installModalShown');
-            
+
             // Show install modal after 5 seconds ONLY if not shown before
             setTimeout(() => {
                 const modal = document.getElementById("installModal");
@@ -2180,7 +2226,7 @@
                     console.log("Install modal shown on", isMobile ? "mobile" : "desktop");
                 }
             }, 5000);
-            
+
             // Mobile-specific install button
             const installBtn = document.getElementById("installBtn");
             if (installBtn) {
