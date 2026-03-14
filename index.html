@@ -211,6 +211,26 @@
             background: white;
         }
 
+        /* Mobile language dropdown positioning */
+        @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+            }
+            
+            .language-select {
+                order: 1;
+                margin-left: 40px;
+                margin-top: 0;
+                padding: 3px 6px;
+                font-size: 11px;
+            }
+            
+            nav {
+                order: 2;
+                margin-left: auto;
+            }
+        }
+
         /* HERO */
 
         .hero {
@@ -755,11 +775,6 @@
                 font-size: 16px;
             }
 
-            .language-select {
-                margin-top: 10px;
-            }
-
-
             .review-marquee {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
@@ -949,6 +964,12 @@
 
         <div class="logo" id="logo">Naipunya 🏠</div>
 
+        <select id="languageSwitcher" class="language-select">
+            <option value="en">English</option>
+            <option value="te">తెలుగు</option>
+            <option value="hi">हिंदी</option>
+        </select>
+
         <nav>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
@@ -961,12 +982,6 @@
                 <a href="#how" id="navHow">How it Works</a>
                 <a href="#pricing" id="navPricing">Pricing</a>
                 <a href="#book" id="navBook">Book</a>
-
-                <select id="languageSwitcher" class="language-select">
-                    <option value="en">English</option>
-                    <option value="te">తెలుగు</option>
-                    <option value="hi">हिंदी</option>
-                </select>
             </div>
         </nav>
 
