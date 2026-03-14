@@ -1704,6 +1704,10 @@
 
     <script>
 
+        fetch("/api/track")
+            .then(res => res.json())
+            .then(data => console.log("Visit logged on server:", data.status));
+
         document.getElementById("logo").addEventListener("click", function () {
             window.location.href = "index.html";
         });
