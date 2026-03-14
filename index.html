@@ -881,6 +881,64 @@
         .close-btn {
             background: #ddd;
         }
+
+        /* STATS SECTION */
+        .stats-section {
+            background: linear-gradient(135deg, #8B5E3C, #A0522D);
+            padding: 60px 8%;
+            color: white;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #FFF;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #F5CBA7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .stat-item {
+                min-width: auto;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .stat-label {
+                font-size: 14px;
+            }
+        }
     </style>
 
 </head>
@@ -969,6 +1027,28 @@
 
         </div>
 
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="workersCount">10+</div>
+                <div class="stat-label" id="workersLabel">Verified Workers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="projectsCount">140+</div>
+                <div class="stat-label" id="projectsLabel">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="citiesCount">25+</div>
+                <div class="stat-label" id="citiesLabel">Areas Covered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="ratingCount">4.6★</div>
+                <div class="stat-label" id="ratingLabel">Average Rating</div>
+            </div>
+        </div>
     </section>
 
     <section id="services" class="section">
@@ -1305,6 +1385,7 @@
                     <option value="Carpentry" data-translate="carpentry">Carpentry</option>
                     <option value="House Painting" data-translate="housePainting">House Painting</option>
                     <option value="Wood Carving" data-translate="woodCarving">Wood Carving</option>
+                    <option value="Other" data-translate="other">Other</option>
                 </select>
 
                 <input type="date" name="Schedule">
@@ -1348,6 +1429,7 @@
                     <option data-translate="carpenter">Carpenter</option>
                     <option data-translate="painter">Painter</option>
                     <option data-translate="woodCarving">Wood Carving</option>
+                    <option data-translate="other">Other</option>
                 </select>
 
                 <input type="text" name="Experience" placeholder="Years of Experience"
@@ -1604,6 +1686,11 @@
                 areYouSkilledWorker: "Are you a skilled worker?",
                 tagLine: "✔ Verified Craftsmen • ✔ Transparent Pricing • ✔ Site Inspection Available",
 
+                workersLabel: "Verified Workers",
+                projectsLabel: "Projects Completed",
+                citiesLabel: "Areas Covered",
+                ratingLabel: "Average Rating",
+
                 servicesTitle: "Our Services",
                 service1: "Carpentry",
                 service1desc: "Furniture repair, cupboards, wardrobes and custom wood work.",
@@ -1659,6 +1746,7 @@
                 carpentry: "Carpentry",
                 painting: "House Painting",
                 woodCarving: "Wood Carving",
+                other: "Other",
                 workDescription: "Describe the work you need (Example: wardrobe repair, door carving, full house painting)",
                 submitRequest: "Submit Request",
 
@@ -1772,6 +1860,11 @@
                 areYouSkilledWorker: "మీరు నైపుణ్యం కలిగిన కార్మికుడా?",
                 tagLine: "✔ ధృవీకరించిన కార్మికులు • ✔ పారదర్శక ధరలు • ✔ స్థల పరిశీలన అందుబాటులో ఉంది",
 
+                workersLabel: "ధృవీకరించిన కార్మికులు",
+                projectsLabel: "పూర్తి అయిన ప్రాజెక్ట్లు",
+                citiesLabel: "కలిగిన ప్రాంతాలు",
+                ratingLabel: "సగటు రేటింగ్",
+
                 servicesTitle: "మా సేవలు",
                 service1: "కార్పెంట్రీ",
                 service1desc: "ఫర్నిచర్ రిపేర్, అల్మారాలు మరియు చెక్క పనులు.",
@@ -1876,6 +1969,7 @@
                 carpentry: "మర్రి పని",
                 housePainting: "ఇంటి పెయింటింగ్",
                 woodCarving: "వుడ్ కార్వింగ్",
+                other: "మరిన్ని",
 
                 termsTitle: "నిబంధనలు & షరతులు",
                 termsIntro: "Naipunya వెబ్‌సైట్‌ను ఉపయోగించడం ద్వారా మీరు ఈ నిబంధనలకు అంగీకరిస్తున్నారు.",
@@ -1939,6 +2033,11 @@
                 areYouSkilledWorker: "क्या आप एक कुशल कार्यकर्ता हैं?",
                 tagLine: "✔ सत्यापित कारीगर • ✔ पारदर्शी कीमतें • ✔ साइट निरीक्षण उपलब्ध",
 
+                workersLabel: "सत्यापित कर्मचारी",
+                projectsLabel: "पूर्ण किए गए प्रोजेक्ट",
+                citiesLabel: "कवर किए गए क्षेत्र",
+                ratingLabel: "औसत रेटिंग",
+
                 servicesTitle: "हमारी सेवाएं",
                 service1: "बढ़ई काम",
                 service1desc: "फर्नीचर रिपेयर और कस्टम वुड वर्क।",
@@ -1994,6 +2093,7 @@
                 carpentry: "बढ़ई का काम",
                 painting: "घर की पेंटिंग",
                 woodCarving: "लकड़ी की नक्काशी",
+                other: "अन्य",
                 workDescription: "आपको किस प्रकार का काम चाहिए लिखें",
                 submitRequest: "अनुरोध भेजें",
 
