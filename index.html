@@ -1549,17 +1549,17 @@
 
     <section class="section" id="faq">
 
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="faqTitle">Frequently Asked Questions</h2>
 
         <div class="faq-container">
 
             <div class="faq-item">
                 <button class="faq-question">
-                    How do I book a carpenter or painter?
+                    <span id="faqQ1">How do I book a carpenter or painter?</span>
                     <span>+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>
+                    <p id="faqA1">
                         Fill the service request form on the website and submit it.
                         Our team will contact you and connect you with a skilled worker.
                     </p>
@@ -1568,11 +1568,11 @@
 
             <div class="faq-item">
                 <button class="faq-question">
-                    Are the workers verified?
+                    <span id="faqQ2">Are the workers verified?</span>
                     <span>+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>
+                    <p id="faqA2">
                         Yes. Naipunya works with experienced craftsmen who have years
                         of experience in carpentry, painting and wood carving.
                     </p>
@@ -1581,11 +1581,11 @@
 
             <div class="faq-item">
                 <button class="faq-question">
-                    How much does the service cost?
+                    <span id="faqQ3">How much does the service cost?</span>
                     <span>+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>
+                    <p id="faqA3">
                         The cost depends on the type of work, materials and complexity.
                         You can request a quote inspection for accurate pricing.
                     </p>
@@ -1594,11 +1594,11 @@
 
             <div class="faq-item">
                 <button class="faq-question">
-                    Do you provide site inspection?
+                    <span id="faqQ4">Do you provide site inspection?</span>
                     <span>+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>
+                    <p id="faqA4">
                         Yes. For larger projects like full house painting or carpentry,
                         workers can visit the site and give an estimate.
                     </p>
@@ -1607,11 +1607,11 @@
 
             <div class="faq-item">
                 <button class="faq-question">
-                    How quickly will workers contact me?
+                    <span id="faqQ5">How quickly will workers contact me?</span>
                     <span>+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>
+                    <p id="faqA5">
                         Usually within a few hours or the same day after submitting
                         your request.
                     </p>
@@ -1620,11 +1620,11 @@
 
             <div class="faq-item">
                 <button class="faq-question">
-                    Can skilled workers join Naipunya?
+                    <span id="faqQ6">Can skilled workers join Naipunya?</span>
                     <span>+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>
+                    <p id="faqA6">
                         Yes. If you are a carpenter, painter or wood carving artist,
                         you can apply through the "Join as Worker" form.
                     </p>
@@ -1840,6 +1840,24 @@
                 carverDesc2: "Leads a team of 3 skilled carving artisans.",
                 carverDesc3: "Special talent in carving gods on wooden doors and temple work.",
 
+                electricianRamesh: "Ramesh Kumar",
+                electricianTitle: "Master Electrician",
+                electricianDesc1: "12+ years of experience in residential and commercial electrical work including wiring, panel installation and troubleshooting.",
+                electricianDesc2: "Leads a team of 2–3 skilled electricians.",
+                electricianDesc3: "Expert in electrical safety standards and energy-efficient solutions.",
+
+                plumberSiva: "Siva Prasad",
+                plumberTitle: "Professional Plumber",
+                plumberDesc1: "10+ years of experience in residential plumbing including pipe repairs, installations and bathroom fixture work.",
+                plumberDesc2: "Leads a team of 2–3 skilled plumbers.",
+                plumberDesc3: "Specializes in modern plumbing techniques and drainage solutions.",
+
+                acTechVijay: "Vijay Kumar",
+                acTechTitle: "AC Service Technician",
+                acTechDesc1: "8+ years of experience in AC installation, repair and maintenance for residential and commercial spaces.",
+                acTechDesc2: "Leads a team of 2–3 AC service technicians.",
+                acTechDesc3: "Expert in all AC brands and gas refilling services.",
+
                 ourWorkTitle: "Our Work",
                 customerReviewsTitle: "Customer Reviews",
 
@@ -1936,6 +1954,26 @@
                 changesToTerms: "9. Changes to Terms",
                 changesToTermsDesc: "Naipunya may update these terms anytime.",
 
+                faqTitle: "Frequently Asked Questions",
+
+                faqQ1: "How do I book a carpenter or painter?",
+                faqA1: "Fill the service request form on the website and submit it. Our team will contact you and connect you with a skilled worker.",
+
+                faqQ2: "Are the workers verified?",
+                faqA2: "Yes. Naipunya works with experienced craftsmen who have years of experience in carpentry, painting and wood carving.",
+
+                faqQ3: "How much does the service cost?",
+                faqA3: "The cost depends on the type of work, materials and complexity. You can request a quote inspection for accurate pricing.",
+
+                faqQ4: "Do you provide site inspection?",
+                faqA4: "Yes. For larger projects like full house painting or carpentry, workers can visit the site and give an estimate.",
+
+                faqQ5: "How quickly will workers contact me?",
+                faqA5: "Usually within a few hours or the same day after submitting your request.",
+
+                faqQ6: "Can skilled workers join Naipunya?",
+                faqA6: "Yes. If you are a carpenter, painter or wood carving artist, you can apply through the 'Join as Worker' form.",
+
                 termsContact: "10. Contact",
                 termsContactDesc: "If you have questions about these terms, contact us."
 
@@ -2017,6 +2055,24 @@
                 carverDesc2: "3 మంది కార్వింగ్ కార్మికుల టీమ్‌ను నడిపిస్తారు.",
                 carverDesc3: "దేవుళ్ల చెక్క కార్వింగ్‌లో ప్రత్యేక ప్రతిభ.",
 
+                electricianRamesh: "రమేష్ కుమార్",
+                electricianTitle: "మాస్టర్ ఎలక్ట్రిషియన్",
+                electricianDesc1: "12+ సంవత్సరాల అనుభవం గృహ మరియు వాణిజ్య ఎలక్ట్రికల్ పనుల్లో, వైరింగ్, ప్యానెల్ ఇన్‌స్టాలేషన్ మరియు ట్రబుల్‌షూటింగ్ సహా.",
+                electricianDesc2: "2–3 నైపుణ్యం కలిగిన ఎలక్ట్రిషియన్ల బృందాన్ని నాయకత్వం వహిస్తున్నారు.",
+                electricianDesc3: "ఎలక్ట్రికల్ భద్రతా ప్రమాణాలు మరియు శక్తి-సమర్థ పరిష్కారాల్లో నిపుణుడు.",
+
+                plumberSiva: "శివ ప్రసాద్",
+                plumberTitle: "ప్రొఫెషనల్ ప్లంబర్",
+                plumberDesc1: "10+ సంవత్సరాల అనుభవం గృహ ప్లంబింగ్ పనుల్లో, పైప్ రిపేర్, ఇన్‌స్టాలేషన్ మరియు బాత్రూమ్ ఫిక్చర్ పనులు సహా.",
+                plumberDesc2: "2–3 నైపుణ్యం కలిగిన ప్లంబర్ల బృందాన్ని నాయకత్వం వహిస్తున్నారు.",
+                plumberDesc3: "ఆధునిక ప్లంబింగ్ టెక్నిక్స్ మరియు డ్రైనేజ్ పరిష్కారాల్లో నిపుణుడు.",
+
+                acTechVijay: "విజయ్ కుమార్",
+                acTechTitle: "ఏసీ సర్వీస్ టెక్నీషియన్",
+                acTechDesc1: "8+ సంవత్సరాల అనుభవం ఏసీ ఇన్‌స్టాలేషన్, రిపేర్ మరియు మెయింటెనెన్స్‌లో, గృహ మరియు వాణిజ్య స్థలాల కోసం.",
+                acTechDesc2: "2–3 ఏసీ సర్వీస్ టెక్నీషియన్ల బృందాన్ని నాయకత్వం వహిస్తున్నారు.",
+                acTechDesc3: "అన్ని ఏసీ బ్రాండ్లు మరియు గ్యాస్ రీఫిల్లింగ్ సేవల్లో నిపుణుడు.",
+
                 ourWorkTitle: "మా పని",
                 customerReviewsTitle: "కస్టమర్ రేవ్లు",
 
@@ -2083,6 +2139,8 @@
                 acRepair: "ఏసీ మరమ్మత్తు",
                 other: "మరిన్ని",
 
+
+
                 termsTitle: "నిబంధనలు & షరతులు",
                 termsIntro: "Naipunya వెబ్‌సైట్‌ను ఉపయోగించడం ద్వారా మీరు ఈ నిబంధనలకు అంగీకరిస్తున్నారు.",
 
@@ -2112,6 +2170,26 @@
 
                 changesToTerms: "9. నిబంధనల మార్పులు",
                 changesToTermsDesc: "ఈ నిబంధనలు ఎప్పుడైనా మారవచ్చు.",
+
+                faqTitle: "తరచుగా అడిగే ప్రశ్నలు",
+
+                faqQ1: "కార్పెంటర్ లేదా పెయింటర్‌ను ఎలా బుక్ చేయాలి?",
+                faqA1: "వెబ్‌సైట్‌లో సేవ అభ్యర్థన ఫారమ్‌ను పూరించి పంపండి. మా బృందం మీతో సంప్రదించి నైపుణ్యం కలిగిన కార్మికుడితో మిమ్మల్ని కలుపుతుంది.",
+
+                faqQ2: "కార్మికులు ధృవీకరించబడ్డారా?",
+                faqA2: "అవును. Naipunya అనుభవజ్ఞులైన కార్పెంటర్లు, పెయింటర్లు మరియు చెక్క కార్వింగ్ కళాకారులతో పనిచేస్తుంది.",
+
+                faqQ3: "సేవ ఖర్చు ఎంత ఉంటుంది?",
+                faqA3: "పని రకం, ఉపయోగించే మెటీరియల్స్ మరియు పనిలోని క్లిష్టతపై ధర ఆధారపడి ఉంటుంది. ఖచ్చితమైన ధర కోసం మీరు కోట్ పరిశీలన కోరవచ్చు.",
+
+                faqQ4: "మీరు సైట్ పరిశీలన అందిస్తారా?",
+                faqA4: "అవును. పూర్తి ఇంటి పెయింటింగ్ లేదా పెద్ద కార్పెంట్రీ పనుల కోసం కార్మికులు సైట్‌ను సందర్శించి అంచనా ఇస్తారు.",
+
+                faqQ5: "కార్మికులు ఎంత త్వరగా సంప్రదిస్తారు?",
+                faqA5: "సాధారణంగా కొన్ని గంటల్లో లేదా అదే రోజులో మీ అభ్యర్థన తర్వాత సంప్రదిస్తారు.",
+
+                faqQ6: "నైపుణ్యం కలిగిన కార్మికులు Naipunyaలో చేరవచ్చా?",
+                faqA6: "అవును. మీరు కార్పెంటర్, పెయింటర్ లేదా చెక్క కార్వింగ్ కళాకారుడు అయితే 'Join as Worker' ఫారమ్ ద్వారా దరఖాస్తు చేయవచ్చు.",
 
                 termsContact: "10. సంప్రదించండి",
                 termsContactDesc: "ఈ నిబంధనలపై ప్రశ్నలు ఉంటే మమ్మల్ని సంప్రదించండి."
@@ -2192,6 +2270,24 @@
                 carverDesc1: "17 साल का अनुभव मंदिर दरवाजे और सजावटी लकड़ी के काम में।",
                 carverDesc2: "3 कारीगरों की टीम का नेतृत्व करते हैं।",
                 carverDesc3: "लकड़ी पर भगवान की आकृति बनाने में विशेष प्रतिभा।",
+
+                electricianRamesh: "रमेश कुमार",
+                electricianTitle: "मास्टर इलेक्ट्रीशियन",
+                electricianDesc1: "12+ वर्षों का अनुभव आवासीय और वाणिज्यिक विद्युत कार्यों में, जिसमें वायरिंग, पैनल इंस्टॉलेशन और ट्रबलशूटिंग शामिल है।",
+                electricianDesc2: "2–3 कुशल इलेक्ट्रीशियनों की टीम का नेतृत्व करते हैं।",
+                electricianDesc3: "विद्युत सुरक्षा मानकों और ऊर्जा-कुशल समाधानों के विशेषज्ञ।",
+
+                plumberSiva: "शिव प्रसाद",
+                plumberTitle: "प्रोफेशनल प्लंबर",
+                plumberDesc1: "10+ वर्षों का अनुभव आवासीय प्लंबिंग में, जिसमें पाइप मरम्मत, इंस्टॉलेशन और बाथरूम फिटिंग कार्य शामिल हैं।",
+                plumberDesc2: "2–3 कुशल प्लंबरों की टीम का नेतृत्व करते हैं।",
+                plumberDesc3: "आधुनिक प्लंबिंग तकनीकों और ड्रेनेज समाधानों में विशेषज्ञ।",
+
+                acTechVijay: "विजय कुमार",
+                acTechTitle: "एसी सर्विस टेक्नीशियन",
+                acTechDesc1: "8+ वर्षों का अनुभव एसी इंस्टॉलेशन, रिपेयर और मेंटेनेंस में, आवासीय और वाणिज्यिक स्थानों के लिए।",
+                acTechDesc2: "2–3 एसी सर्विस टेक्नीशियनों की टीम का नेतृत्व करते हैं।",
+                acTechDesc3: "सभी एसी ब्रांड और गैस रीफिलिंग सेवाओं के विशेषज्ञ।",
 
                 ourWorkTitle: "हमारा काम",
                 customerReviewsTitle: "ग्राहकों की रिव्यू",
@@ -2287,6 +2383,26 @@
 
                 changesToTerms: "9. नियमों में बदलाव",
                 changesToTermsDesc: "नियम कभी भी अपडेट किए जा सकते हैं।",
+
+                faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+
+                faqQ1: "मैं बढ़ई या पेंटर कैसे बुक कर सकता हूँ?",
+                faqA1: "वेबसाइट पर सेवा अनुरोध फॉर्म भरकर सबमिट करें। हमारी टीम आपसे संपर्क करेगी और आपको एक कुशल वर्कर से जोड़ेगी।",
+
+                faqQ2: "क्या वर्कर सत्यापित हैं?",
+                faqA2: "हाँ। Naipunya अनुभवी कारीगरों के साथ काम करता है जिनके पास बढ़ईगीरी, पेंटिंग और लकड़ी की नक्काशी का वर्षों का अनुभव है।",
+
+                faqQ3: "सेवा की कीमत कितनी होती है?",
+                faqA3: "कीमत काम के प्रकार, सामग्री और जटिलता पर निर्भर करती है। सही कीमत के लिए आप कोट निरीक्षण का अनुरोध कर सकते हैं।",
+
+                faqQ4: "क्या आप साइट निरीक्षण प्रदान करते हैं?",
+                faqA4: "हाँ। बड़े प्रोजेक्ट जैसे पूरे घर की पेंटिंग या बढ़ई काम के लिए वर्कर साइट पर आकर अनुमान दे सकते हैं।",
+
+                faqQ5: "वर्कर मुझसे कितनी जल्दी संपर्क करेंगे?",
+                faqA5: "आमतौर पर आपकी रिक्वेस्ट सबमिट करने के कुछ घंटों के भीतर या उसी दिन।",
+
+                faqQ6: "क्या कुशल वर्कर Naipunya से जुड़ सकते हैं?",
+                faqA6: "हाँ। यदि आप बढ़ई, पेंटर या लकड़ी नक्काशी कलाकार हैं तो आप 'Join as Worker' फॉर्म के माध्यम से आवेदन कर सकते हैं।",
 
                 termsContact: "10. संपर्क",
                 termsContactDesc: "अगर कोई सवाल हो तो हमें संपर्क करें।"
